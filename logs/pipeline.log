@@ -1,0 +1,65 @@
+2026-11-11 00:20:22,267 | INFO    | pipeline | === stage 1-ingestion started ===
+2026-11-11 00:20:22,269 | INFO    | ingestion | Archive already present: ml-100k.zip (skipping download)
+2026-11-11 00:20:22,275 | INFO    | ingestion | MD5 verified: 0e33842e24a9c977be4e0107933c0723
+2026-11-11 00:20:22,404 | INFO    | ingestion | Ingestion complete: users=943 items=1682 interactions=100000
+2026-11-11 00:20:22,405 | INFO    | pipeline | === stage 1-ingestion finished in 0.1s ===
+2026-11-11 00:20:22,405 | INFO    | pipeline | === stage 2-validation started ===
+2026-11-11 00:20:22,665 | INFO    | validation | users         rows_in=943     valid=943     quarantined=0
+2026-11-11 00:20:22,665 | INFO    | validation | items         rows_in=1682    valid=1682    quarantined=0
+2026-11-11 00:20:22,665 | INFO    | validation | interactions  rows_in=100000  valid=100000  quarantined=0
+2026-11-11 00:20:22,665 | INFO    | validation | Validation complete - 31 checks executed, report written.
+2026-11-11 00:20:22,666 | INFO    | pipeline | === stage 2-validation finished in 0.3s ===
+2026-11-11 00:20:22,666 | INFO    | pipeline | === stage 3-preparation started ===
+2026-11-11 00:20:22,759 | INFO    | preparation | Preparation complete: train=80003 test=19997 (split at 1998-03-07 02:21:09+00:00), 0 re-ratings resolved
+2026-11-11 00:20:22,759 | INFO    | pipeline | === stage 3-preparation finished in 0.1s ===
+2026-11-11 00:20:22,759 | INFO    | pipeline | === stage 4-transformation started ===
+2026-11-11 00:20:22,810 | INFO    | transformation | Transformation complete: matrix 751x1682 nnz=80003 density=6.333%
+2026-11-11 00:20:22,810 | INFO    | pipeline | === stage 4-transformation finished in 0.1s ===
+2026-11-11 00:20:22,810 | INFO    | pipeline | === stage 5-features started ===
+2026-11-11 00:20:22,860 | INFO    | features | Feature store written: 751 user, 1616 item, 80003 interaction rows; 24 features documented in catalog
+2026-11-11 00:20:22,860 | INFO    | pipeline | === stage 5-features finished in 0.1s ===
+2026-11-11 00:20:22,860 | INFO    | pipeline | === stage 6-training started ===
+2026-11-11 00:20:22,901 | INFO    | training | popularity_baseline trained in 0.00s (run_id=6076fa6123e8431ca3038016ad67afde). Sample top-5 for user 1: [64, 483, 318, 408, 169]
+2026-11-11 00:20:23,071 | INFO    | training | item_knn_cf trained in 0.15s (run_id=a66d0d9a832841f1b6f7bc3a12af068d). Sample top-5 for user 1: [50, 174, 172, 98, 64]
+2026-11-11 00:20:23,071 | INFO    | pipeline | === stage 6-training finished in 0.2s ===
+2026-11-11 00:20:23,071 | INFO    | pipeline | === stage 7-evaluation started ===
+2026-11-11 00:20:23,315 | INFO    | evaluation | popularity_baseline -> {'precision_at_10': 0.0888, 'recall_at_10': 0.0914, 'ndcg_at_10': 0.11, 'coverage': 0.0297, 'diversity': 0.7402, 'rmse': 1.0397, 'mae': 0.8367, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-11 00:20:23,794 | INFO    | evaluation | item_knn_cf -> {'precision_at_10': 0.1112, 'recall_at_10': 0.0603, 'ndcg_at_10': 0.1279, 'coverage': 0.0842, 'diversity': 0.6957, 'rmse': 1.0312, 'mae': 0.8001, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-11 00:20:23,921 | INFO    | evaluation | Evaluation complete - comparison written to /home/bisagn/Parth/dm4ml-a2/recommendation-pipeline/reports/evaluation/model_comparison.md
+2026-11-11 00:20:23,922 | INFO    | pipeline | === stage 7-evaluation finished in 0.9s ===
+2026-11-11 00:20:23,922 | INFO    | pipeline | PIPELINE COMPLETE in 1.7s
+2026-11-11 00:27:31,228 | INFO    | features | Feature store written: 751 user, 1616 item, 80003 interaction rows; 24 features documented in catalog
+2026-11-11 00:27:56,540 | INFO    | validation | users         rows_in=943     valid=943     quarantined=0
+2026-11-11 00:27:56,540 | INFO    | validation | items         rows_in=1682    valid=1682    quarantined=0
+2026-11-11 00:27:56,540 | INFO    | validation | interactions  rows_in=100000  valid=100000  quarantined=0
+2026-11-11 00:27:56,541 | INFO    | validation | Validation complete - 32 checks executed, report written.
+2026-11-13 02:17:11,772 | INFO    | ingestion | Archive already present: ml-100k.zip (skipping download)
+2026-11-13 02:17:11,778 | INFO    | ingestion | MD5 verified: 0e33842e24a9c977be4e0107933c0723
+2026-11-13 02:17:11,898 | INFO    | ingestion | Ingestion complete: users=943 items=1682 interactions=100000
+2026-11-13 02:17:13,295 | INFO    | ingestion | Archive already present: ml-100k.zip (skipping download)
+2026-11-13 02:17:13,301 | INFO    | ingestion | MD5 verified: 0e33842e24a9c977be4e0107933c0723
+2026-11-13 02:17:13,423 | INFO    | ingestion | Ingestion complete: users=943 items=1682 interactions=100000
+2026-11-13 02:17:15,186 | INFO    | validation | users         rows_in=943     valid=943     quarantined=0
+2026-11-13 02:17:15,186 | INFO    | validation | items         rows_in=1682    valid=1682    quarantined=0
+2026-11-13 02:17:15,186 | INFO    | validation | interactions  rows_in=100000  valid=100000  quarantined=0
+2026-11-13 02:17:15,186 | INFO    | validation | Validation complete - 32 checks executed, report written.
+2026-11-13 02:17:16,986 | INFO    | validation | users         rows_in=943     valid=943     quarantined=0
+2026-11-13 02:17:16,986 | INFO    | validation | items         rows_in=1682    valid=1682    quarantined=0
+2026-11-13 02:17:16,986 | INFO    | validation | interactions  rows_in=100000  valid=100000  quarantined=0
+2026-11-13 02:17:16,987 | INFO    | validation | Validation complete - 32 checks executed, report written.
+2026-11-13 02:17:18,498 | INFO    | preparation | Preparation complete: train=80003 test=19997 (split at 1998-03-07 02:21:09+00:00), 0 re-ratings resolved
+2026-11-13 02:17:19,966 | INFO    | preparation | Preparation complete: train=80003 test=19997 (split at 1998-03-07 02:21:09+00:00), 0 re-ratings resolved
+2026-11-13 02:17:21,344 | INFO    | transformation | Transformation complete: matrix 751x1682 nnz=80003 density=6.333%
+2026-11-13 02:17:22,847 | INFO    | transformation | Transformation complete: matrix 751x1682 nnz=80003 density=6.333%
+2026-11-13 02:17:24,157 | INFO    | features | Feature store written: 751 user, 1616 item, 80003 interaction rows; 24 features documented in catalog
+2026-11-13 02:17:25,513 | INFO    | features | Feature store written: 751 user, 1616 item, 80003 interaction rows; 24 features documented in catalog
+2026-11-13 02:17:27,002 | INFO    | training | popularity_baseline trained in 0.00s (run_id=056f88c8cf39412987de159a049a8fe4). Sample top-5 for user 1: [64, 483, 318, 408, 169]
+2026-11-13 02:17:28,789 | INFO    | training | item_knn_cf trained in 0.15s (run_id=65b6c464012d45a5a9385951c7bad076). Sample top-5 for user 1: [50, 174, 172, 98, 64]
+2026-11-13 02:17:30,450 | INFO    | training | popularity_baseline trained in 0.00s (run_id=1e5ba92431c14bb59ea26af402d7880c). Sample top-5 for user 1: [64, 483, 318, 408, 169]
+2026-11-13 02:17:32,160 | INFO    | training | item_knn_cf trained in 0.16s (run_id=74aabf56d6df40c59fdded5acd8aa7ca). Sample top-5 for user 1: [50, 174, 172, 98, 64]
+2026-11-13 02:17:34,117 | INFO    | evaluation | popularity_baseline -> {'precision_at_10': 0.0888, 'recall_at_10': 0.0914, 'ndcg_at_10': 0.11, 'coverage': 0.0297, 'diversity': 0.7402, 'rmse': 1.0397, 'mae': 0.8367, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-13 02:17:34,550 | INFO    | evaluation | item_knn_cf -> {'precision_at_10': 0.1112, 'recall_at_10': 0.0603, 'ndcg_at_10': 0.1279, 'coverage': 0.0842, 'diversity': 0.6957, 'rmse': 1.0312, 'mae': 0.8001, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-13 02:17:34,667 | INFO    | evaluation | Evaluation complete - comparison written to /home/bisagn/Parth/dm4ml-a2/recommendation-pipeline/reports/evaluation/model_comparison.md
+2026-11-13 02:17:36,601 | INFO    | evaluation | popularity_baseline -> {'precision_at_10': 0.0888, 'recall_at_10': 0.0914, 'ndcg_at_10': 0.11, 'coverage': 0.0297, 'diversity': 0.7402, 'rmse': 1.0397, 'mae': 0.8367, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-13 02:17:37,024 | INFO    | evaluation | item_knn_cf -> {'precision_at_10': 0.1112, 'recall_at_10': 0.0603, 'ndcg_at_10': 0.1279, 'coverage': 0.0842, 'diversity': 0.6957, 'rmse': 1.0312, 'mae': 0.8001, 'n_users_ranked': 98, 'n_rating_pairs': 2949}
+2026-11-13 02:17:37,133 | INFO    | evaluation | Evaluation complete - comparison written to /home/bisagn/Parth/dm4ml-a2/recommendation-pipeline/reports/evaluation/model_comparison.md

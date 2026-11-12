@@ -1,0 +1,7 @@
+user_id,model,top_recommendations
+94,popularity_baseline,"Schindler's List (1993); Close Shave, A (1995); Wrong Trousers, The (1993); Star Wars (1977); Titanic (1997)"
+94,item_knn_cf,North by Northwest (1959); One Flew Over the Cuckoo's Nest (1975); Lawrence of Arabia (1962); To Kill a Mockingbird (1962); Rear Window (1954)
+393,popularity_baseline,"Casablanca (1942); Close Shave, A (1995); Silence of the Lambs, The (1991); Rear Window (1954); Godfather, The (1972)"
+393,item_knn_cf,"Raiders of the Lost Ark (1981); Terminator 2: Judgment Day (1991); Apollo 13 (1995); Terminator, The (1984); Aliens (1986)"
+416,popularity_baseline,"Shawshank Redemption, The (1994); Casablanca (1942); Schindler's List (1993); Close Shave, A (1995); Wrong Trousers, The (1993)"
+416,item_knn_cf,"Raiders of the Lost Ark (1981); Star Wars (1977); Silence of the Lambs, The (1991); Shawshank Redemption, The (1994); Empire Strikes Back, The (1980)"

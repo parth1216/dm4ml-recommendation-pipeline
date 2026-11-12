@@ -1,0 +1,218 @@
+{
+  "stage": "validation",
+  "executed_at_utc": "2026-11-12T20:47:16Z",
+  "entities": {
+    "users": {
+      "rows_in": 943,
+      "rows_valid": 943,
+      "rows_quarantined": 0,
+      "error_file": "data/errors/users_errors.csv"
+    },
+    "items": {
+      "rows_in": 1682,
+      "rows_valid": 1682,
+      "rows_quarantined": 0,
+      "error_file": "data/errors/items_errors.csv"
+    },
+    "interactions": {
+      "rows_in": 100000,
+      "rows_valid": 100000,
+      "rows_quarantined": 0,
+      "error_file": "data/errors/interactions_errors.csv"
+    }
+  },
+  "checks": [
+    {
+      "entity": "users",
+      "check": "no missing values in required columns",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "users",
+      "check": "user_id: greater_than_or_equal_to(1)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "users",
+      "check": "age: in_range(5, 100)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "users",
+      "check": "gender: isin(['M', 'F'])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "no missing values in required columns",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "movie_id: greater_than_or_equal_to(1)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "unknown: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Action: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Adventure: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Animation: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Children: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Comedy: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Crime: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Documentary: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Drama: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Fantasy: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Film-Noir: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Horror: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Musical: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Mystery: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Romance: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Sci-Fi: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Thriller: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "War: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "items",
+      "check": "Western: isin([0, 1])",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "no missing values in required columns",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "user_id: greater_than_or_equal_to(1)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "movie_id: greater_than_or_equal_to(1)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "rating: in_range(1.0, 5.0)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "timestamp: in_range(788918400, 1794516436)",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "dataframe: duplicate (user_id, movie_id, timestamp) event",
+      "status": "PASS",
+      "n_failed": 0
+    },
+    {
+      "entity": "interactions",
+      "check": "referential integrity (user_id in users, movie_id in items)",
+      "status": "PASS",
+      "n_failed": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+entity,feature,dtype,description,computation
+user,user_n_ratings,int,Activity count: number of train ratings by the user,count over train window
+user,user_avg_rating,float,Mean rating the user gives,mean(rating) over train window
+user,user_rating_std,float,Spread of the user's ratings (0 if single rating),"std(rating), filled with 0"
+user,user_days_since_last,float,Recency: days between user's last train rating and the reference date,(ref_ts - max(ts)) / 86400
+user,user_active_days,float,Span of user activity in days,(max(ts) - min(ts)) / 86400
+user,user_preferred_genre,str,Genre the user rated most often (>=4 stars weighted),argmax over genre counts of liked items
+user,user_age,int,Age from the user profile,u.user profile
+user,user_gender,str,Gender from the user profile (M/F),u.user profile
+user,user_occupation,str,Occupation from the user profile,u.user profile
+user,user_age_group,str,Age bucket (<18 ... 65+),binned in preparation
+item,item_n_ratings,int,Popularity: number of train ratings for the item,count over train window
+item,item_avg_rating,float,Mean rating of the item,mean(rating) over train window
+item,item_rating_std,float,Spread of the item's ratings (0 if single rating),"std(rating), filled with 0"
+item,item_bayesian_rating,float,Damped mean rating; shrinks low-count items toward the global mean,"(n*mean + m*global)/(n+m), m=20"
+item,item_pop_rank,int,Dense popularity rank (1 = most rated),rank of item_n_ratings
+item,item_days_since_last,float,Recency: days since the item was last rated in train,(ref_ts - max(ts)) / 86400
+item,item_release_year,int,Release year parsed from release_date / title,preparation stage
+item,item_age_years,float,Age of the movie at the reference date,ref_year - release_year
+item,item_genres,str,Pipe-joined genre list,one-hot flags from u.item
+interaction,rating_dev_user,float,Rating minus the user's average (user bias removed),rating - user_avg_rating
+interaction,rating_dev_item,float,Rating minus the item's average (item bias removed),rating - item_avg_rating
+interaction,event_hour,int,Hour of day of the interaction (UTC),from event_time
+interaction,event_dow,int,Day of week of the interaction (0=Mon),from event_time
+interaction,is_weekend,int,1 if the interaction happened on Sat/Sun,event_dow >= 5

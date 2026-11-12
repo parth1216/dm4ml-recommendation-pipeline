@@ -1,0 +1,30 @@
+# environments
+.venv/
+.venv-airflow/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# airflow runtime (recreated by scripts/setup_airflow.sh)
+.airflow/
+
+# large / regenerated data (recreated by the pipeline)
+data/raw/*
+data/processed/*
+data/features/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+
+# quarantined records are small and are committed as evidence
+# (data/errors is NOT ignored on purpose)
+
+# mlflow backing store (screenshots committed under reports/)
+mlruns/
+
+# model binaries (metadata.json files are committed)
+models/**/*.joblib
+
+# noisy local logs (pipeline.log is committed as evidence)
+logs/airflow_*.log
+logs/mlflow_*.log

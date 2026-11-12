@@ -1,0 +1,30 @@
+# Roll No: 2025AG05429 | DM4ML Assignment 2
+# Core data stack
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+pyarrow==17.0.0
+PyYAML==6.0.2
+requests==2.32.3
+
+# Data validation
+pandera==0.20.4
+
+# Modelling
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# Experiment tracking
+mlflow==2.17.2
+
+# Plots / diagram / report
+matplotlib==3.9.2
+reportlab==4.2.5
+tabulate==0.9.0
+
+# Tests
+pytest==8.3.3
+
+# NOTE: Apache Airflow is installed in a SEPARATE virtualenv
+# (see scripts/setup_airflow.sh) to keep its heavy dependency
+# tree isolated from the ML environment.

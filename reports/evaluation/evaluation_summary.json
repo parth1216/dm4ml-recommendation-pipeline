@@ -1,0 +1,30 @@
+{
+  "stage": "evaluation",
+  "executed_at_utc": "2026-11-12T20:47:37Z",
+  "results": [
+    {
+      "model": "popularity_baseline",
+      "precision_at_10": 0.08877551020408163,
+      "recall_at_10": 0.09137280784180499,
+      "ndcg_at_10": 0.11004321668614622,
+      "coverage": 0.0297029702970297,
+      "diversity": 0.7401905597982589,
+      "rmse": 1.0397211646540574,
+      "mae": 0.8366509673252907,
+      "n_users_ranked": 98,
+      "n_rating_pairs": 2949
+    },
+    {
+      "model": "item_knn_cf",
+      "precision_at_10": 0.11122448979591835,
+      "recall_at_10": 0.06031534259241054,
+      "ndcg_at_10": 0.12794802865964017,
+      "coverage": 0.08415841584158416,
+      "diversity": 0.6957320806338538,
+      "rmse": 1.0312348618424612,
+      "mae": 0.8000523326358852,
+      "n_users_ranked": 98,
+      "n_rating_pairs": 2949
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+# Roll No: 2025AG05429 | DM4ML Assignment 2
+# Central configuration for the end-to-end recommendation pipeline.
+# Every stage reads ONLY from this file, so a reviewer can change
+# behaviour (K, thresholds, neighbourhood size, ...) in one place.
+
+project: dm4ml-a2-recommendation-pipeline
+random_seed: 42
+
+dataset:
+  name: ml-100k
+  source_url: "https://files.grouplens.org/datasets/movielens/ml-100k.zip"
+  # Official MD5 published by GroupLens (verified at download time).
+  md5: "0e33842e24a9c977be4e0107933c0723"
+
+paths: # all relative to the project root
+  data_raw: data/raw
+  data_processed: data/processed
+  data_features: data/features
+  data_errors: data/errors
+  models: models
+  reports: reports
+  logs: logs
+  mlruns: mlruns
+
+validation:
+  rating_min: 1.0
+  rating_max: 5.0
+  age_min: 5
+  age_max: 100
+  genders: ["M", "F"]
+  # MovieLens project started 1995; anything earlier / in the future is invalid.
+  timestamp_min: "1995-01-01"
+
+preparation:
+  # Chronological split: first 80% of interactions (by timestamp) -> train,
+  # most recent 20% -> test. No random leakage across time.
+  test_fraction: 0.20
+  # A user may re-rate the same movie; we keep the most recent rating.
+  duplicate_policy: keep_latest
+
+transformation:
+  # Bayesian (damped) mean:  (n*mean + m*global_mean) / (n + m)
+  bayesian_prior_weight: 20
+
+training:
+  popularity:
+    # Which item feature the baseline ranks by (read from the feature store).
+    score_feature: item_bayesian_rating
+  item_knn:
+    k_neighbors: 30
+    shrinkage: 100.0
+    # damping for the baseline biases b_u / b_i used in rating prediction
+    lambda_item: 10.0
+    lambda_user: 15.0
+
+evaluation:
+  top_k: 10
+  # An item in the test window counts as "relevant" if rated >= this value.
+  relevance_threshold: 4.0
+  sample_users_in_report: 3
+
+mlflow:
+  experiment_name: dm4ml_a2_recsys
+  tracking_dir: mlruns

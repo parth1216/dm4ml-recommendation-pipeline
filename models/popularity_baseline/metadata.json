@@ -1,0 +1,11 @@
+{
+  "model": "popularity_baseline",
+  "trained_at_utc": "2026-11-12T20:47:30Z",
+  "params": {
+    "score_feature": "item_bayesian_rating",
+    "bayesian_prior_weight": 20
+  },
+  "fit_seconds": 0.001,
+  "mlflow_run_id": "1e5ba92431c14bb59ea26af402d7880c",
+  "model_file": "models/popularity_baseline/model.joblib"
+}

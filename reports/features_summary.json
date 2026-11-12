@@ -1,0 +1,52 @@
+{
+  "stage": "features",
+  "executed_at_utc": "2026-11-12T20:47:25Z",
+  "reference_timestamp": 889237269,
+  "user_features": {
+    "rows": 751,
+    "columns": [
+      "user_id",
+      "user_n_ratings",
+      "user_avg_rating",
+      "user_rating_std",
+      "user_active_days",
+      "user_days_since_last",
+      "user_preferred_genre",
+      "user_age",
+      "user_gender",
+      "user_occupation",
+      "user_age_group"
+    ]
+  },
+  "item_features": {
+    "rows": 1616,
+    "columns": [
+      "movie_id",
+      "item_n_ratings",
+      "item_avg_rating",
+      "item_rating_std",
+      "item_bayesian_rating",
+      "item_pop_rank",
+      "title",
+      "item_days_since_last",
+      "item_release_year",
+      "item_genres",
+      "item_age_years"
+    ]
+  },
+  "interaction_features": {
+    "rows": 80003,
+    "columns": [
+      "user_id",
+      "movie_id",
+      "rating",
+      "timestamp",
+      "rating_dev_user",
+      "rating_dev_item",
+      "event_hour",
+      "event_dow",
+      "is_weekend"
+    ]
+  },
+  "catalog_entries": 24
+}

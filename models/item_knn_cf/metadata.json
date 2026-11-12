@@ -1,0 +1,15 @@
+{
+  "model": "item_knn_cf",
+  "trained_at_utc": "2026-11-12T20:47:32Z",
+  "params": {
+    "k_neighbors": 30,
+    "shrinkage": 100.0,
+    "lambda_item": 10.0,
+    "lambda_user": 15.0,
+    "similarity": "adjusted_cosine",
+    "prediction": "knn_with_baselines"
+  },
+  "fit_seconds": 0.162,
+  "mlflow_run_id": "74aabf56d6df40c59fdded5acd8aa7ca",
+  "model_file": "models/item_knn_cf/model.joblib"
+}

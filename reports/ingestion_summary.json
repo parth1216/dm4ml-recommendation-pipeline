@@ -1,0 +1,62 @@
+{
+  "stage": "ingestion",
+  "executed_at_utc": "2026-11-12T20:47:13Z",
+  "source_url": "https://files.grouplens.org/datasets/movielens/ml-100k.zip",
+  "archive_md5": "0e33842e24a9c977be4e0107933c0723",
+  "entities": {
+    "users": {
+      "file": "data/raw/users.csv",
+      "rows": 943,
+      "columns": [
+        "user_id",
+        "age",
+        "gender",
+        "occupation",
+        "zip_code"
+      ],
+      "bytes": 22667
+    },
+    "items": {
+      "file": "data/raw/items.csv",
+      "rows": 1682,
+      "columns": [
+        "movie_id",
+        "title",
+        "release_date",
+        "video_release_date",
+        "imdb_url",
+        "unknown",
+        "Action",
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Crime",
+        "Documentary",
+        "Drama",
+        "Fantasy",
+        "Film-Noir",
+        "Horror",
+        "Musical",
+        "Mystery",
+        "Romance",
+        "Sci-Fi",
+        "Thriller",
+        "War",
+        "Western"
+      ],
+      "bytes": 238048
+    },
+    "interactions": {
+      "file": "data/raw/interactions.csv",
+      "rows": 100000,
+      "columns": [
+        "user_id",
+        "movie_id",
+        "rating",
+        "timestamp"
+      ],
+      "bytes": 1979207
+    }
+  }
+}

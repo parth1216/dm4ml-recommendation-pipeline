@@ -1,0 +1,15 @@
+{
+  "stage": "transformation",
+  "executed_at_utc": "2026-11-12T20:47:22Z",
+  "user_activity_rows": 751,
+  "item_popularity_rows": 1616,
+  "interaction_matrix": {
+    "shape": [
+      751,
+      1682
+    ],
+    "nnz": 80003,
+    "density": 0.06333
+  },
+  "global_mean_rating": 3.5176
+}
